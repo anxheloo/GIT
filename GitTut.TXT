@@ -1,0 +1,74 @@
+1-Download git from https://git-scm.com/download/win
+
+2-Add it to Envirenmental Variables so we can access it from CMD, otherwise use PowerShell
+
+3-Create the Project Folder
+
+4-Navigate to project Folder from CMD & set up git inside this folder >> git init   		-> git is now tracking all of the files in this folder for the changes
+								      >> git branch -M main     -> set the name of the branch
+								      >> git status   	 	-> To check the status of our projec, branch name and commits
+								      >> git add .    		-> to add all the files so git can track them 
+								      >> git reset .  		-> to untrack them all
+								      >> git log   		-> check commits
+								      >> git log .   		-> check all commits
+								      >> git remote add origin git@github.com:anxheloo/spring-boot-for-beginners.git  -> configure push destination
+								      >> 
+
+
+
+								      >> git checkout -b branch 		 -> create a new branch named branch. This command switched us to this 														    branch also
+								      >> git push --set-upstream origin branch   -> to show branch created from master(main) branch
+
+
+5-Use >> git status   -> This tells us what changes have been made since our previous version
+
+6-But we just started so we dont have a version history, so our next step is: 
+
+	-Pick which changes we want in our next version >> git add .  -> add everything from the folder(So now we have files ready to be put in our version history)
+	-To create a new version >> git commit -m "Version 1"   -> All the changes after commit remains locally until we pushes them
+
+7-We also need to attach the name and email in our git, so every changes that is made is identifiable
+	-git config --global user.name "Anxhelo Cenollari"
+	-git config --global user.email "anxhelocenollari@gmail.com"
+
+8-Now that we have configured git, lets have a look at our version history >> git log
+
+9-Now lets say that while we created this commit we made a mistake, for example we forgot to add a change:
+	-To fix this we create our new version as normal >> git add .
+	->>git commit -m "Version 1" --amend  ->Instead of creating a new commit, this changes are going to the previous commit
+
+10-Visualize the changes we made inside the code editor:
+	-From the editor we can also commit files and see the changes side by side
+	->>git reset .  -> get all of the code out of the staging area
+
+11-Viewing previous verion of the code>>git log  ,     Than copy the commit hash >> git checkout 73873ba662699ee54c499e32b0aa17bdaba34b05
+
+	>>git log -> shows commits before the version we changed into, not after
+	So to check them all we use>> git log --all
+
+	>>git log --all --graph  -> Check them in a graphical way
+
+	>>git checkout master -> it always points to the latest commit(switch to the latest commit)
+
+	>>git checkout 6d6fb024304d0f106fe2ffe8097a86c30f0e7643 main.java ->restore file main.java from the specified hash commit
+	To restore all the code >> git checkout 6d6fb024304d0f106fe2ffe8097a86c30f0e7643 .
+
+	>>git status -> to check the status of files
+
+-To ignore files from being tracked and added we create .gitignore file in our project and enter inside the name of files we 
+ want to get ignored.
+
+>>rm -rf .git  -> remove 
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+GENERATING A SSH KEY FROM TERMINAL
+----------------------------------------------------------------------------------------------------------------------------------
+
+1-Open Terminal, navigate to root
+2-ssh-keygen -t ed25519 -C anxhelocenollari@gmail.com  
+3-Enter for default location
+4-Make sure pc knows about it :   
+
+	
